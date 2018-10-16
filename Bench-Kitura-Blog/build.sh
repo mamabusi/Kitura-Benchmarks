@@ -31,10 +31,11 @@ Darwin)
   ;;
 esac
 
-# Build 'new' version
+# Build 'new' and 'nio' version
 # If $REPO and $NEW_COMMIT are set, edit package $REPO to $NEW_COMMIT before building
 pushd $dir/latest/
 build "$dir/newBuild" "$REPO" "$NEW_COMMIT"
+build "$dir/nio" "$REPO" "$NEW_COMMIT"
 popd
 
 # Build 'baseline' version
