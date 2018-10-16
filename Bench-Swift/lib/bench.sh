@@ -120,7 +120,8 @@ function runBenchmark {
       ;;
     *)
       # Execute a 2-way compare of baseline and new build for the same implementation
-      $dir/bench/compare.sh $dir/baselineBuild/release/${IMPLEMENTATION},label=Baseline,pwd=$dir $dir/newBuild/release/${IMPLEMENTATION},label=New,pwd=$dir
+      #$dir/bench/compare.sh $dir/baselineBuild/release/${IMPLEMENTATION},label=Baseline,pwd=$dir $dir/newBuild/release/${IMPLEMENTATION},label=New,pwd=$dir
+      $dir/bench/compare.sh $dir/baselineBuild/release/${IMPLEMENTATION},label=Baseline,pwd=$dir $dir/newBuild/release/${IMPLEMENTATION},label=New,pwd=$dir $dir/nio/release/${IMPLEMENTATION},label=NIO,pwd=$dir
       ;;
     esac
 

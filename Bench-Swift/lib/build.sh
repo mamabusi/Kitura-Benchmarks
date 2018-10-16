@@ -25,6 +25,16 @@ function build {
   # Make sure correct Swift version is installed
   installSwift
 
+  #Set the environment variable to pick up NIO.
+  if [[ $pathname = *"nio" ]]; then
+  echo "Comes here"
+  export KITURA_NIO=1
+  swift package clean
+  swift package update
+  echo "Building project"
+  # Build the project, exiting early if the build fails
+  swift build -c release ${SWIFT_BUILD_FLAGS} || exit $?
+  else 
   # Configure packages
   swift package fetch
   if [ ! -z "$repo" ] && [ ! -z "$commit" ]; then
@@ -35,7 +45,7 @@ function build {
 
   # Build the project, exiting early if the build fails
   swift build -c release ${SWIFT_BUILD_FLAGS} || exit $?
-
+  fi
   if [ ! -z "$pathname" ]; then
     # Symlink to requested build directory
     ln -sfn $PWD/.build $pathname
