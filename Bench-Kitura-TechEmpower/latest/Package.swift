@@ -10,7 +10,7 @@ let package = Package(
         .package(url: "https://github.com/IBM-Swift/LoggerAPI.git", from: "1.7.0"),
         .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.0"),
         .package(url: "https://github.com/IBM-Swift/Configuration.git", from: "3.0.0"),
-        .package(url: "https://github.com/IBM-Swift/Kitura-CouchDB.git", from: "2.0.0"),
+//        .package(url: "https://github.com/IBM-Swift/Kitura-CouchDB.git", from: "2.0.0"),
         .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
         .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.3.0"),
         .package(url: "https://github.com/IBM-Swift/Kitura-StencilTemplateEngine.git", from: "1.10.0"),
@@ -48,8 +48,8 @@ let package = Package(
         .target(
             name: "TechEmpowerMongoKitten",
             dependencies: [.target(name: "TechEmpowerCommon"), "Kitura", "HeliumLogger", "Configuration", "MongoKitten", "KituraStencil"]),
-        .target(
-            name: "TechEmpowerCouch",
-            dependencies: ["Kitura", "HeliumLogger", "CouchDB"]),
+//        .target(
+//            name: "TechEmpowerCouch",
+//            dependencies: ["Kitura", "HeliumLogger", "CouchDB"]),
     ]
 )
